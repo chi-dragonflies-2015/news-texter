@@ -1,5 +1,5 @@
 <div class="container">
-  <form action= "/users/<%= @user.id %>" method ="post">
+  <form action= "/users/<%= @user.id %>" method ="post" id='edit-form'>
     <input type="hidden" name="_method" value="put">
     <label>Email<input type="text" name="user[email]" value="<%= @user.email %>"></label>
     <label>Password<input type="text" name="user[password]" value="<%= @user.password %>"></label>
