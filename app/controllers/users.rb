@@ -11,17 +11,17 @@ get '/users/new' do
   erb :"/users/new"
 end
 
-get 'users/:id' do
+get '/users/:id' do
   @user = User.find(params[:id])
   erb :"/users/show"
 end
 
-get 'users/:id/edit' do
+get '/users/:id/edit' do
   @user = User.find(params[:id])
   erb :"/users/edit"
 end
 
-put 'users/:id/edit' do
+put '/users/:id' do
   @user = User.find(params[:id])
   if @user.update_attributes(params[:user])
     redirect "/users/#{@user.id}"
