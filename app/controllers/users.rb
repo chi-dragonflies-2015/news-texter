@@ -1,18 +1,21 @@
 post '/users' do
-  @user = User.authenticate(params[:email], params[:password])
-    if @user
+  @user = User.new({email: params[:email], password: params[:password]})
+  if @user.save
     session[:user_id] = @user.id
-      redirect "/users/#{@user.id}"
-    else
-      erb :"users/login"
-    end
+    redirect "/users/#{@user.id}"
+  else
+    erb :"users/login"
+  end
 end
+
 get '/users/new' do
   erb :"/users/new"
 end
 
 get '/users/:id' do
-  @user = User.find(params[:id])
+  p '**************'
+  p params[:id]
+  @user = User.find_by_id(params[:id])
   erb :"/users/show"
 end
 
