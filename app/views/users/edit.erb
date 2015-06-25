@@ -1,0 +1,9 @@
+<div class="container">
+  <form action= "/users/<%= @user.id %>" method ="post">
+    <input type="hidden" name="_method" value="put">
+    <label>Email<input type="text" name="user[email]" value="<%= @user.email %>"></label>
+    <label>Password<input type="text" name="user[password]" value="<%= @user.password %>"></label>
+    <label>Phone Number<input type="text" name="user[phone]" value="<%= @user.phone_number %>"></label>
+    <input type="submit" name="Submit" >
+  </form>
+</div>
