@@ -1,3 +1,29 @@
-.button a {
 
+a{
+  text-decoration: none;
+  color:red;
 }
+
+a:hover{
+  color:gray;
+}
+input {
+  display: block;
+}
+
+h1 {
+  padding-left: .5em;
+}
+
+form{
+  padding: 1em;
+}
+
+.container{
+  padding-left: 1.1em;
+}
+
+.big-text{
+  font-size: large;
+}
+
