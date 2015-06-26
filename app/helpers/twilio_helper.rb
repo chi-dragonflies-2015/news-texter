@@ -1,11 +1,15 @@
 def message_users
   twilio_client = Twilio::REST::Client.new TWILIOSID_KEY, TWILIOAUTH_TOKEN
 
-  twilio_client.messages.create(
-    from: TWILIO_NUMBER,
-    to: '+15074031145',
-    body: digest_message
-  )
+  User.all.each do |user|
+    if user.phone
+      twilio_client.messages.create(
+        from: TWILIO_NUMBER,
+        to: '3109679110',
+        body: digest_message
+      )
+    end
+  end
 end
 
 def digest_message
