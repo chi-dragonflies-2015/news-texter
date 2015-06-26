@@ -1,13 +1,13 @@
 <div class="container">
-  <div id="profile">
-    Username: <%= @user.email %>
-    Phone Number: <%= @user.phone %>
-  <a href ="/users/<%= @user.id %>/edit"> Update Profile </a>
-  </div>
+  <section id="profile">
+     Email: <%= @user.email %> <br/>
+     Phone Number: <%= @user.phone %><br/>
+    <a href ="/users/<%= @user.id %>/edit"> Update Profile </a>
 
-  <div> SMS frequency: </div>
+    <div> SMS frequency: </div>
 
-  <div id="digest"> Todays's digest (plus links) </div>
+    <div id="digest"> Todays's digest (plus links) </div>
 
-  <div><a href="/logout"> Log Out</a></div>
+    <div><a class="logout" href="/logout"> Log Out</a></div>
+  </section>
 </div>
