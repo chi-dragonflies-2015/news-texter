@@ -6,8 +6,13 @@ require ::File.expand_path('../config/environment', __FILE__)
 require 'active_support/core_ext'
 
 desc "grabs articles from NTY"
-task :grab_article do
-  grab_article
+task :grab_articles do
+  grab_articles
+end
+
+desc "Spams ben with texts"
+task :message_users do
+  message_users
 end
 
 namespace :generate do
