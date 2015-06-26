@@ -13,8 +13,6 @@ get '/users/new' do
 end
 
 get '/users/:id' do
-  p '**************'
-  p params[:id]
   @user = User.find_by_id(params[:id])
   erb :"/users/show"
 end

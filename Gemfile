@@ -18,7 +18,7 @@ gem 'shotgun'
 gem 'twilio-ruby'
 
 gem 'bcrypt'
-
+gem 'json'
 
 group :test do
   gem 'shoulda-matchers'
