@@ -1,10 +1,10 @@
 <div class="container">
   <section id="profile">
-     Email: <%= @user.email %> <br/>
-     Phone Number: <%= @user.phone %><br/>
-    <a href ="/users/<%= @user.id %>/edit"> Update Profile </a>
-
-    <div> SMS frequency: </div>
+     <p class="email"> Email: <%= @user.email %> </p>
+     <p class="phone"> Phone Number: <%= @user.phone %> </p>
+    <div class="update">
+      <a id="update" href ="/users/<%= @user.id %>/edit"> Update Profile </a>
+    </div>
 
     <div id="digest"> Todays's digest (plus links):
 
