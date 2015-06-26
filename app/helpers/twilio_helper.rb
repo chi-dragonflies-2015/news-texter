@@ -1,4 +1,6 @@
 def message_users
+  grab_articles
+
   twilio_client = Twilio::REST::Client.new TWILIOSID_KEY, TWILIOAUTH_TOKEN
 
   User.all.each do |user|

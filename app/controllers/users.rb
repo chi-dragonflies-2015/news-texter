@@ -20,13 +20,23 @@ end
 
 get '/users/:id/edit' do
   @user = User.find(params[:id])
+  if request.xhr?
+    erb :"/users/edit", layout: false
+  else
   erb :"/users/edit"
+  end
 end
 
 put '/users/:id' do
   @user = User.find(params[:id])
   if @user.update_attributes(params[:user])
-    redirect "/users/#{@user.id}"
+    if request.xhr?
+      email = @user.email
+      phone = @user.phone
+      JSON.generate(email: email, phone: phone)
+    else
+      redirect "/users/#{@user.id}"
+    end
   else
     erb :"/users/edit"
   end
