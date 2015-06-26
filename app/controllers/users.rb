@@ -14,6 +14,7 @@ end
 
 get '/users/:id' do
   @user = User.find_by_id(params[:id])
+  @articles = CachedArticle.last(3)
   erb :"/users/show"
 end
 

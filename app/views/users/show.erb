@@ -8,10 +8,12 @@
 
     <div id="digest"> Todays's digest (plus links): </div>
 
-    <div id="top-article"><a href='#'>Title</a>
-      <p class = "subtitle">Abstract</p>
-      <p>Published Date</p>
+    <% @articles.each do |article| %>
+      <div id="top-article"><a href='<%= article.url %>'><%= article.title %></a>
+        <p class = "subtitle"><%= article.abstract %></p>
+        <p class = "fine-text">By: <%= article.byline %> | <%= article.published_on %></p>
       </div>
+    <% end %>
 
     <div><a class="logout" href="/logout"> Log Out</a></div>
   </section>
