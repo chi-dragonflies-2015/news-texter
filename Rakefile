@@ -5,6 +5,16 @@ require ::File.expand_path('../config/environment', __FILE__)
 # Include all of ActiveSupport's core class extensions, e.g., String#camelize
 require 'active_support/core_ext'
 
+desc "grabs articles from NTY"
+task :grab_articles do
+  grab_articles
+end
+
+desc "Spams ben with texts"
+task :message_users do
+  message_users
+end
+
 namespace :generate do
   desc "Create an empty model in app/models, e.g., rake generate:model NAME=User"
   task :model do

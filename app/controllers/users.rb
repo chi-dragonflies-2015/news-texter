@@ -13,8 +13,8 @@ get '/users/new' do
 end
 
 get '/users/:id' do
-  p params[:id]
   @user = User.find_by_id(params[:id])
+  @articles = CachedArticle.last(3)
   erb :"/users/show"
 end
 

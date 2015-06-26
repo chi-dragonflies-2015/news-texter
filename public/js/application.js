@@ -24,5 +24,18 @@ $(document).ready(function() {
           $('.section').html(response);
         });
     });
+
+      $('.container').on('submit', '#edit-form', function(event){
+    event.preventDefault();
+     var url = $(this).attr('href');
+     var data = $(this).serialize();
+     var request = $.ajax({ url: url,
+                              method: "GET",
+                              data: data
+      });
+        request.done(function(response){
+          $('.section').html(response);
+        });
+    });
 });
 
