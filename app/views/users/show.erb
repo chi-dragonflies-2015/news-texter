@@ -6,15 +6,15 @@
 
     <div> SMS frequency: </div>
 
-    <div id="digest"> Todays's digest (plus links): </div>
+    <div id="digest"> Todays's digest (plus links):
 
     <% @articles.each do |article| %>
-      <div id="top-article"><a href='<%= article.url %>'><%= article.title %></a>
+      <div class="top-article"><a href='<%= article.url %>' class='title'><%= article.title %></a>
+        <p class = "fine-text"><%= article.byline %> | <%= article.published_on %></p>
         <p class = "subtitle"><%= article.abstract %></p>
-        <p class = "fine-text">By: <%= article.byline %> | <%= article.published_on %></p>
       </div>
     <% end %>
-
+  </div>
     <div><a class="logout" href="/logout"> Log Out</a></div>
   </section>
 </div>
