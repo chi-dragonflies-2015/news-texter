@@ -1,4 +1,5 @@
 get '/' do
+  # grab_articles #DELETE THIS LATER
   erb :index
 end
 
